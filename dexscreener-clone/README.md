@@ -1,70 +1,187 @@
-# Getting Started with Create React App
+# DexScreener Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive cryptocurrency terminal application built with React, featuring real-time token data, price charts, transaction history, and portfolio tracking. This project demonstrates how to build a modern crypto dashboard using Moralis APIs.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- 📈 **Trending Tokens** - Track the most popular tokens across multiple blockchains
+- 🔍 **Token Details** - In-depth information about any token including price charts and transactions
+- 💼 **Portfolio Tracking** - Monitor your crypto holdings in one place
+- 🚀 **Pump.fun Integration** - Discover new tokens from the Pump.fun ecosystem
+- 🔎 **Advanced Search** - Find tokens by name, symbol, or contract address
+- ⛓️ **Multi-Chain Support** - Data from Ethereum, BSC, Polygon, Solana, and more
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React** - Frontend library
+- **React Router** - Navigation and routing
+- **Tailwind CSS** - Styling and UI components
+- **Chart.js** - Data visualization
+- **Moralis API** - Blockchain data provider
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+├── components/ # Reusable UI components
+│ ├── layout/ # Layout components (sidebar, topbar)
+│ ├── token/ # Token-specific components
+│ ├── trending/ # Trending page components
+│ ├── portfolio/ # Portfolio tracking components
+│ └── modals/ # Modal components (search, filters)
+├── pages/ # Page components
+├── services/ # API services and utilities
+├── routes/ # Routing configuration
+├── App.js # Main application component
+└── index.js # Application entry point
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Moralis APIs Used
 
-### `npm run build`
+This project leverages several Moralis APIs to fetch blockchain data:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Token Data APIs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Feature                 | API Endpoint                                 | Description                                          | Moralis Docs Link                                                                                                                                          |
+| ----------------------- | -------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Trending Tokens         | `GET /tokens/trending`                       | Gets trending tokens across all supported chains     | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-trending-tokens?chain=eth)                                                             |
+| Token Search            | `GET /tokens/search`                         | Searches for tokens based on user queries            | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/search-tokens?query=pepe&chains=eth)                                                       |
+| Token Metadata (EVM)    | `GET /erc20/metadata`                        | Fetches metadata for tokens (name, symbol, decimals) | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-token-metadata?chain=eth&addresses=[])                                                 |
+| Token Metadata (Solana) | `GET /token/mainnet/{tokenAddress}/metadata` | Retrieves token metadata on Solana                   | [API Docs](https://docs.moralis.com/web3-data-api/solana/reference/get-token-metadata?network=mainnet&address=SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt) |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Pair/Liquidity Pool APIs
 
-### `npm run eject`
+| Feature               | API Endpoint                                     | Description                                        | Moralis Docs Link                                                                                                                                                                 |
+| --------------------- | ------------------------------------------------ | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Token Pairs (EVM)     | `GET /erc20/{tokenAddress}/pairs`                | Gets trading pairs for a specific token            | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-token-pairs?token_address=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&chain=eth)                               |
+| Token Pairs (Solana)  | `GET /token/mainnet/{tokenAddress}/pairs`        | Gets trading pairs for a Solana token              | [API Docs](https://docs.moralis.com/web3-data-api/solana/reference/get-token-pairs-by-address?network=mainnet&address=SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt)                |
+| Pair Stats (EVM)      | `GET /pairs/{pairAddress}/stats`                 | Retrieves stats for a trading pair (price, volume) | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-token-pair-stats?address=0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640&chain=eth)                                |
+| Pair Stats (Solana)   | `GET /token/mainnet/pairs/{pairAddress}/stats`   | Gets stats for a Solana trading pair               | [API Docs](https://docs.moralis.com/web3-data-api/solana/reference/get-token-pair-stats?network=mainnet&pairAddress=83v8iPyZihDEjDdY8RdZddyZNyUtXngz69Lgo9Kt5d6d)                 |
+| Pair Swaps (EVM)      | `GET /pairs/{pairAddress}/swaps`                 | Gets transaction history for a trading pair        | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-swaps-by-pair-address?address=0xcbcdf9626bc03e24f779434178a73a0b4bad62ed&chain=eth&order=DESC)                |
+| Pair Swaps (Solana)   | `GET /token/mainnet/pairs/{pairAddress}/swaps`   | Gets Solana pair transaction history               | [API Docs](https://docs.moralis.com/web3-data-api/solana/reference/get-swaps-by-pair-address?network=mainnet&pairAddress=EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx&order=DESC) |
+| Pair Snipers (EVM)    | `GET /pairs/{pairAddress}/snipers`               | Identifies early buyers/snipers of a token         | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-snipers-by-pair-address?address=0x85218527945d48167A682e277867F1539AD00068&chain=eth&blocksAfterCreation=3)   |
+| Pair Snipers (Solana) | `GET /token/mainnet/pairs/{pairAddress}/snipers` | Identifies Solana token snipers                    | [API Docs](https://docs.moralis.com/web3-data-api/solana/reference/get-snipers-by-pair-address?address=72Fxbe17djHuwZ5AtcihK58FERSULoLWiC5sh2Hjhma8&blocksAfterCreation=1000)     |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Token Holder APIs
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Feature            | API Endpoint                             | Description                            | Moralis Docs Link                                                                                                                                                |
+| ------------------ | ---------------------------------------- | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Token Holders      | `GET /erc20/{tokenAddress}/holders`      | Lists token holders and their balances | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-token-holders?token_address=0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0&chain=eth&order=DESC) |
+| Token Holder Stats | `GET /erc20/{tokenAddress}/holder-stats` | Provides analytics about token holders | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-token-holder-stats?address=0x2260fac5e5542a773aa44fbcfedf7c193bc2c599&chain=eth)             |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Wallet/Portfolio APIs
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Feature          | API Endpoint                       | Description                                      | Moralis Docs Link                                    |
+| ---------------- | ---------------------------------- | ------------------------------------------------ | ---------------------------------------------------- |
+| Wallet Net Worth | `GET /wallets/{address}/net-worth` | Calculates total value of a wallet across chains | [EVM API](https://docs.moralis.io/web3-data-api/evm) |
+| Wallet Tokens    | `GET /wallets/{address}/tokens`    | Lists all tokens held by a specific wallet       | [EVM API](https://docs.moralis.io/web3-data-api/evm) |
 
-## Learn More
+### Token Discovery/Filtering API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Feature         | API Endpoint           | Description                                      | Moralis Docs Link                                                                                                                                                                                                                                                                                                                                    |
+| --------------- | ---------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Token Filtering | `GET /filtered-tokens` | Finds tokens based on complex filtering criteria | [API Docs](https://docs.moralis.com/web3-data-api/evm/reference/get-filtered-tokens?chain=0x1&filters=[{%22metric%22:%22experiencedBuyers%22,%22timeFrame%22:%22oneMonth%22,%22gt%22:%2210%22}]&sortBy={%22metric%22:%22experiencedBuyers%22,%22timeFrame%22:%22oneMonth%22,%22type%22:%22DESC%22}&timeFramesToReturn=[]&metricsToReturn=[]&limit=5) |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Pump.fun (Solana) APIs
 
-### Code Splitting
+| Feature                   | API Endpoint                                    | Description                                  | Moralis Docs Link                                                                      |
+| ------------------------- | ----------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Pump.fun New Tokens       | `GET /token/mainnet/exchange/pumpfun/new`       | Gets newly created tokens on Pump.fun        | [API Docs](https://solana-gateway.moralis.io/api/#/Token/getNewTokensByExchange)       |
+| Pump.fun Bonding Tokens   | `GET /token/mainnet/exchange/pumpfun/bonding`   | Gets tokens in the bonding phase on Pump.fun | [API Docs](https://solana-gateway.moralis.io/api/#/Token/getBondingTokensByExchange)   |
+| Pump.fun Graduated Tokens | `GET /token/mainnet/exchange/pumpfun/graduated` | Gets tokens that have graduated on Pump.fun  | [API Docs](https://solana-gateway.moralis.io/api/#/Token/getGraduatedTokensByExchange) |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Chart Widget
 
-### Analyzing the Bundle Size
+| Feature              | Source                                      | Description                                | Moralis Docs Link                                      |
+| -------------------- | ------------------------------------------- | ------------------------------------------ | ------------------------------------------------------ |
+| Moralis Chart Widget | `https://moralis.com/static/embed/chart.js` | Embeds interactive price charts for tokens | [Widget Docs](https://moralis.com/widgets/price-chart) |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Supported Blockchains
 
-### Making a Progressive Web App
+The application supports multiple blockchains with the following chain IDs:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Chain     | Chain ID | Explorer                                                |
+| --------- | -------- | ------------------------------------------------------- |
+| Ethereum  | 0x1      | [Etherscan](https://etherscan.io)                       |
+| BSC       | 0x38     | [BscScan](https://bscscan.com)                          |
+| Polygon   | 0x89     | [PolygonScan](https://polygonscan.com)                  |
+| Arbitrum  | 0xa4b1   | [Arbiscan](https://arbiscan.io)                         |
+| Optimism  | 0xa      | [Optimistic Etherscan](https://optimistic.etherscan.io) |
+| Base      | 0x2105   | [BaseScan](https://basescan.org)                        |
+| Avalanche | 0xa86a   | [Snowtrace](https://snowtrace.io)                       |
+| Solana    | solana   | [Solscan](https://solscan.io)                           |
+| Fantom    | 0xfa     | [FTMScan](https://ftmscan.com)                          |
+| Pulse     | 0x171    | [PulseScan](https://scan.pulsechain.com)                |
+| Ronin     | 0x7e4    | [Ronin Explorer](https://app.roninchain.com)            |
 
-### Advanced Configuration
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Prerequisites
 
-### Deployment
+- Node.js (v14 or later)
+- npm or yarn
+- Moralis API key ([Get one here](https://moralis.io))
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Installation
 
-### `npm run build` fails to minify
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   git clone https://github.com/yourusername/dexscreener-clone.git
+   cd dexscreener-clone
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory and add your Moralis API key:
+
+   ```
+   REACT_APP_MORALIS_API_KEY=your_api_key_here
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
+
+## Styling
+
+The application uses Tailwind CSS with custom variables for consistent theming:
+
+```css
+:root {
+  --color-bg-primary: #0e1118;
+  --color-bg-secondary: #141722;
+  --color-bg-tertiary: #1e2330;
+  --color-bg-highlight: #252b3b;
+  --color-text-primary: #fff;
+  --color-text-secondary: #8a94a8;
+  --color-text-tertiary: #636d83;
+  --color-border: #2c3344;
+  --color-green: #16c784;
+  --color-red: #ea3943;
+  --color-blue: #4878ff;
+}
+```
+
+## Resources
+
+- [Moralis Web3 API Documentation](https://docs.moralis.com/web3-data-api/evm/reference)
+- [Moralis Solana API Documentation](https://docs.moralis.com/web3-data-api/solana/reference)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
+- [React Router Documentation](https://reactrouter.com/en/main)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Built with ❤️ by Bharath
