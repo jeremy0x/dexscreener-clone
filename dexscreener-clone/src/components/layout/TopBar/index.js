@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import FilterTools from "./FilterTools";
 
 const TopBar = ({
-  timeFilter,
-  onTimeFilterChange,
   chainId,
   isFiltered,
   openFiltersModal,

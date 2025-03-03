@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import TableHeader from "./TableHeader";
 import TokenRow from "./TokenRow";
 
-// components/trending/TrendingTable/index.js
 const TrendingTable = ({
   tokens,
   loading,
-  timeFilter,
   sortBy,
   sortDirection,
   onSortChange,
@@ -86,9 +84,8 @@ const TrendingTable = ({
           ) : (
             sortedTokens.map((token, index) => (
               <TokenRow
-                key={`${token.chainId}-${token.tokenAddress}`}
+                key={token.id || index}
                 token={token}
-                timeFilter={timeFilter}
                 rank={index + 1}
               />
             ))

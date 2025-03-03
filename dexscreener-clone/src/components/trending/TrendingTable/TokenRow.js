@@ -8,22 +8,7 @@ import {
   formatPrice,
 } from "../../../utils/formatters";
 
-const TokenRow = ({ token, timeFilter, rank }) => {
-  // Get the appropriate period based on the time filter
-  const getPeriodKey = (filter) => {
-    switch (filter) {
-      case "5m":
-        return "1h"; // API doesn't have 5m, use 1h as closest
-      case "1h":
-        return "1h";
-      case "6h":
-        return "4h"; // API doesn't have 6h, use 4h as closest
-      case "24h":
-      default:
-        return "24h";
-    }
-  };
-
+const TokenRow = ({ token, rank }) => {
   const getChainPath = (chainId) => {
     const chainPathMap = {
       ethereum: "0x1",
@@ -47,27 +32,6 @@ const TokenRow = ({ token, timeFilter, rank }) => {
   const navigate = useNavigate();
 
   const handleTokenClick = () => {
-    // Get the correct URL path for the chain
-    const getChainPath = (chainId) => {
-      const chainPathMap = {
-        ethereum: "0x1",
-        binance: "0x38",
-        bsc: "0x38", // Alternative name
-        polygon: "0x89",
-        solana: "solana",
-        arbitrum: "0xa4b1",
-        base: "0x2105",
-        avalanche: "0xa86a",
-        optimism: "0xa",
-        linea: "0xe708",
-        fantom: "0xfa",
-        pulse: "0x171",
-        ronin: "0x7e4",
-      };
-
-      return chainPathMap[token.chainId] || token.chainId;
-    };
-
     navigate(`/${getChainPath(token.chainId)}/${token.tokenAddress}`, {
       state: {
         tokenData: {
@@ -96,8 +60,6 @@ const TokenRow = ({ token, timeFilter, rank }) => {
 
     return current;
   };
-
-  const period = getPeriodKey(timeFilter);
 
   return (
     <tr

@@ -27,7 +27,6 @@ const TrendingPage = () => {
   const { chainId } = useParams();
   const [tokens, setTokens] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [timeFilter, setTimeFilter] = useState("24h");
   const [sortBy, setSortBy] = useState("");
   const [sortDirection, setSortDirection] = useState("desc");
   const [isFiltersModalOpen, setFiltersModalOpen] = useState(false);
@@ -71,15 +70,9 @@ const TrendingPage = () => {
     }
   };
 
-  const handleTimeFilterChange = (filter) => {
-    setTimeFilter(filter);
-  };
-
   return (
     <div className="flex flex-col h-full">
       <TopBar
-        timeFilter={timeFilter}
-        onTimeFilterChange={handleTimeFilterChange}
         chainId={chainId}
         isFiltered={isFiltered}
         openFiltersModal={() => setFiltersModalOpen(true)}
@@ -89,7 +82,6 @@ const TrendingPage = () => {
       <TrendingTable
         tokens={tokens}
         loading={loading}
-        timeFilter={timeFilter}
         sortBy={sortBy}
         sortDirection={sortDirection}
         onSortChange={handleSortChange}
