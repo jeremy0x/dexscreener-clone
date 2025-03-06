@@ -1,4 +1,3 @@
-// components/layout/LeftSidebar/SearchButton.js
 import React from "react";
 
 const SearchButton = ({ openSearchModal }) => {
