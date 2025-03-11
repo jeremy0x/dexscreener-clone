@@ -43,7 +43,7 @@ const NewTokenCard = ({
               />
             ) : (
               <span className="text-white font-bold">
-                {token.symbol.charAt(0)}
+                {token.symbol ? token.symbol.charAt(0) : "?"}
               </span>
             )}
           </div>

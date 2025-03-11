@@ -2,6 +2,12 @@
 
 A comprehensive cryptocurrency terminal application built with React, featuring real-time token data, price charts, transaction history, and portfolio tracking. This project demonstrates how to build a modern crypto dashboard similar to Dexscreener using Moralis APIs.
 
+## Video Tutorial
+
+📺 [Watch the step-by-step tutorial on YouTube](https://youtu.be/ps4vYIGpfhE)
+
+[![DexScreener Clone Tutorial](https://img.youtube.com/vi/ps4vYIGpfhE/maxresdefault.jpg)](https://youtu.be/ps4vYIGpfhE)
+
 ## Features
 
 - 📈 **Trending Tokens** - Track the most popular tokens across multiple blockchains
@@ -126,7 +132,7 @@ The application supports multiple blockchains with the following chain IDs:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/dexscreener-clone.git
+   git clone https://github.com/bharathbabu-moralis/dexscreener-clone.git
    cd dexscreener-clone
    ```
 
@@ -174,10 +180,9 @@ The application uses Tailwind CSS with custom variables for consistent theming:
 
 - [Moralis Web3 API Documentation](https://docs.moralis.com/web3-data-api/evm/reference)
 - [Moralis Solana API Documentation](https://docs.moralis.com/web3-data-api/solana/reference)
-- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [React Documentation](https://react.dev/learn)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
-- [React Router Documentation](https://reactrouter.com/en/main)
 
 ## License
 
