@@ -1,6 +1,6 @@
 # DexScreener Clone
 
-A comprehensive cryptocurrency terminal application built with React, featuring real-time token data, price charts, transaction history, and portfolio tracking. This project demonstrates how to build a modern crypto dashboard using Moralis APIs.
+A comprehensive cryptocurrency terminal application built with Next.js, featuring real-time token data, price charts, transaction history, and portfolio tracking. This project demonstrates how to build a modern crypto dashboard using Moralis APIs.
 
 ## Features
 
@@ -13,8 +13,8 @@ A comprehensive cryptocurrency terminal application built with React, featuring 
 
 ## Tech Stack
 
-- **React** - Frontend library
-- **React Router** - Navigation and routing
+- **Next.js 15** - React framework with App Router
+- **React 19** - Frontend library
 - **Tailwind CSS** - Styling and UI components
 - **Chart.js** - Data visualization
 - **Moralis API** - Blockchain data provider
@@ -22,18 +22,24 @@ A comprehensive cryptocurrency terminal application built with React, featuring 
 ## Project Structure
 
 ```
-src/
+├── app/ # Next.js App Router pages
+│ ├── page.js # Home page (trending tokens)
+│ ├── [chainId]/ # Dynamic chain pages
+│ ├── [chainId]/[tokenAddress]/ # Token detail pages
+│ ├── portfolio/ # Portfolio page
+│ ├── pumpfun/ # Pump.fun page
+│ ├── layout.js # Root layout
+│ └── globals.css # Global styles
 ├── components/ # Reusable UI components
 │ ├── layout/ # Layout components (sidebar, topbar)
 │ ├── token/ # Token-specific components
 │ ├── trending/ # Trending page components
 │ ├── portfolio/ # Portfolio tracking components
 │ └── modals/ # Modal components (search, filters)
-├── pages/ # Page components
-├── services/ # API services and utilities
-├── routes/ # Routing configuration
-├── App.js # Main application component
-└── index.js # Application entry point
+├── lib/ # Utilities and services
+│ ├── services/ # API services
+│ └── utils/ # Helper utilities
+└── public/ # Static assets
 ```
 
 ## Moralis APIs Used
@@ -137,16 +143,16 @@ The application supports multiple blockchains with the following chain IDs:
    npm install
    ```
 
-3. Create a `.env` file in the root directory and add your Moralis API key:
+3. Create a `.env.local` file in the root directory and add your Moralis API key:
 
-   ```
-   REACT_APP_MORALIS_API_KEY=your_api_key_here
+   ```env
+   NEXT_PUBLIC_MORALIS_API_KEY=your_api_key_here
    ```
 
 4. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
@@ -178,7 +184,7 @@ The application uses Tailwind CSS with custom variables for consistent theming:
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
-- [React Router Documentation](https://reactrouter.com/en/main)
+- [Next.js Documentation](https://nextjs.org/docs)
 
 ## License
 
