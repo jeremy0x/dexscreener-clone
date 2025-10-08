@@ -60,7 +60,7 @@ const TopBar = ({
             {pages.map((page) => (
               <button
                 key={page.id}
-                className="flex items-center bg-dex-bg-tertiary hover:bg-dex-bg-highlight text-dex-text-primary rounded px-3 py-2 text-sm"
+                className="flex items-center bg-dex-bg-tertiary hover:bg-dex-bg-highlight text-dex-text-primary rounded-sm px-3 py-2 text-sm"
                 onClick={() => router.push(`/${page.id}`)}
               >
                 <span className="mr-1">{page.icon}</span>

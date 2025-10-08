@@ -19,8 +19,8 @@ const NetWorthCard = ({ netWorth, loading, error }) => {
   if (loading && !netWorth) {
     return (
       <div className="bg-dex-bg-secondary rounded-lg p-6 mb-4 animate-pulse">
-        <div className="h-8 bg-dex-bg-tertiary rounded w-2/3 mb-4"></div>
-        <div className="h-12 bg-dex-bg-tertiary rounded w-1/2"></div>
+        <div className="h-8 bg-dex-bg-tertiary rounded-sm w-2/3 mb-4"></div>
+        <div className="h-12 bg-dex-bg-tertiary rounded-sm w-1/2"></div>
       </div>
     );
   }

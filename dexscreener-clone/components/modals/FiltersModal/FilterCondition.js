@@ -16,7 +16,7 @@ const FilterCondition = ({
             Metric
           </label>
           <select
-            className="w-full px-3 py-2 bg-dex-bg-highlight border border-dex-border rounded text-dex-text-primary"
+            className="w-full px-3 py-2 bg-dex-bg-highlight border border-dex-border rounded-sm text-dex-text-primary"
             value={filter.metric}
             onChange={(e) => onUpdate("metric", e.target.value)}
           >
@@ -33,7 +33,7 @@ const FilterCondition = ({
             Time Frame
           </label>
           <select
-            className="w-full px-3 py-2 bg-dex-bg-highlight border border-dex-border rounded text-dex-text-primary"
+            className="w-full px-3 py-2 bg-dex-bg-highlight border border-dex-border rounded-sm text-dex-text-primary"
             value={filter.timeFrame}
             onChange={(e) => onUpdate("timeFrame", e.target.value)}
           >
@@ -50,7 +50,7 @@ const FilterCondition = ({
             Condition
           </label>
           <select
-            className="w-full px-3 py-2 bg-dex-bg-highlight border border-dex-border rounded text-dex-text-primary"
+            className="w-full px-3 py-2 bg-dex-bg-highlight border border-dex-border rounded-sm text-dex-text-primary"
             value={filter.operator}
             onChange={(e) => onUpdate("operator", e.target.value)}
           >
@@ -68,7 +68,7 @@ const FilterCondition = ({
           </label>
           <input
             type="text"
-            className="w-full px-3 py-2 bg-dex-bg-highlight border border-dex-border rounded text-dex-text-primary"
+            className="w-full px-3 py-2 bg-dex-bg-highlight border border-dex-border rounded-sm text-dex-text-primary"
             value={filter.value}
             onChange={(e) => onUpdate("value", e.target.value)}
           />

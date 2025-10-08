@@ -29,7 +29,7 @@ const PairSelector = ({ pairs, selectedPair, onSelect }) => {
   return (
     <div className="relative">
       <button
-        className="flex items-center justify-between w-full p-2 bg-dex-bg-tertiary rounded hover:bg-dex-bg-highlight transition-colors"
+        className="flex items-center justify-between w-full p-2 bg-dex-bg-tertiary rounded-sm hover:bg-dex-bg-highlight transition-colors"
         onClick={toggleDropdown}
       >
         <div className="flex flex-col">

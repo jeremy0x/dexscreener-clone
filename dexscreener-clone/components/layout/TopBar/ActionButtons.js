@@ -15,7 +15,7 @@ const ActionButtons = () => {
       {buttons.map((button) => (
         <button
           key={button.label}
-          className="flex items-center bg-dex-bg-tertiary hover:bg-dex-bg-highlight text-dex-text-primary rounded px-3 py-2 text-sm transition-colors"
+          className="flex items-center bg-dex-bg-tertiary hover:bg-dex-bg-highlight text-dex-text-primary rounded-sm px-3 py-2 text-sm transition-colors"
         >
           <span className="mr-1">{button.icon}</span>
           <span>{button.label}</span>

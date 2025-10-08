@@ -768,7 +768,7 @@ const TokenInfo = ({ token, pair, timeFrame, chainId }) => {
               </span>
               <button
                 onClick={() => handleCopy(pair.pairAddress)}
-                className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded hover:bg-dex-bg-highlight"
+                className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded-sm hover:bg-dex-bg-highlight"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -789,7 +789,7 @@ const TokenInfo = ({ token, pair, timeFrame, chainId }) => {
                 href={getExplorerUrl(pair.pairAddress, "token")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded hover:bg-dex-bg-highlight"
+                className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded-sm hover:bg-dex-bg-highlight"
               >
                 EXP
               </a>
@@ -809,7 +809,7 @@ const TokenInfo = ({ token, pair, timeFrame, chainId }) => {
               </span>
               <button
                 onClick={() => handleCopy(token.address)}
-                className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded hover:bg-dex-bg-highlight"
+                className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded-sm hover:bg-dex-bg-highlight"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -830,7 +830,7 @@ const TokenInfo = ({ token, pair, timeFrame, chainId }) => {
                 href={getExplorerUrl(token.address, "token")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded hover:bg-dex-bg-highlight"
+                className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded-sm hover:bg-dex-bg-highlight"
               >
                 EXP
               </a>
@@ -874,7 +874,7 @@ const TokenInfo = ({ token, pair, timeFrame, chainId }) => {
                         ).tokenAddress
                       )
                     }
-                    className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded hover:bg-dex-bg-highlight"
+                    className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded-sm hover:bg-dex-bg-highlight"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -909,7 +909,7 @@ const TokenInfo = ({ token, pair, timeFrame, chainId }) => {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded hover:bg-dex-bg-highlight"
+                    className="px-1.5 py-0.5 text-xs bg-dex-bg-tertiary rounded-sm hover:bg-dex-bg-highlight"
                   >
                     EXP
                   </a>

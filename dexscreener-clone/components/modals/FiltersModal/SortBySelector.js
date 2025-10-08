@@ -12,7 +12,7 @@ const SortBySelector = ({ sortBy, metrics, timeFrames, onChange }) => {
     <div className="flex flex-wrap gap-3">
       <div className="flex-1 min-w-[180px]">
         <select
-          className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded text-dex-text-primary"
+          className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded-sm text-dex-text-primary"
           value={sortBy.metric}
           onChange={(e) => handleChange("metric", e.target.value)}
         >
@@ -26,7 +26,7 @@ const SortBySelector = ({ sortBy, metrics, timeFrames, onChange }) => {
 
       <div className="flex-1 min-w-[180px]">
         <select
-          className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded text-dex-text-primary"
+          className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded-sm text-dex-text-primary"
           value={sortBy.timeFrame}
           onChange={(e) => handleChange("timeFrame", e.target.value)}
         >
@@ -40,7 +40,7 @@ const SortBySelector = ({ sortBy, metrics, timeFrames, onChange }) => {
 
       <div className="flex-1 min-w-[180px]">
         <select
-          className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded text-dex-text-primary"
+          className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded-sm text-dex-text-primary"
           value={sortBy.type}
           onChange={(e) => handleChange("type", e.target.value)}
         >

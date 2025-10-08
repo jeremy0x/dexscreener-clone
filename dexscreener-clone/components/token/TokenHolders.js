@@ -249,7 +249,7 @@ const TokenHolders = ({ token, chainId }) => {
                       rel="noopener noreferrer"
                       className="font-mono hover:text-dex-blue flex items-center"
                     >
-                      <span className="bg-dex-bg-tertiary text-dex-text-primary px-1 rounded mr-1">
+                      <span className="bg-dex-bg-tertiary text-dex-text-primary px-1 rounded-sm mr-1">
                         {holder.is_contract ? "📄" : "👤"}
                       </span>
                       {formatWalletAddress(holder.owner_address)}
@@ -275,11 +275,11 @@ const TokenHolders = ({ token, chainId }) => {
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap">
                     {holder.is_contract ? (
-                      <span className="bg-blue-500/20 text-blue-500 px-2 py-0.5 rounded text-xs">
+                      <span className="bg-blue-500/20 text-blue-500 px-2 py-0.5 rounded-sm text-xs">
                         Contract
                       </span>
                     ) : (
-                      <span className="bg-green-500/20 text-green-500 px-2 py-0.5 rounded text-xs">
+                      <span className="bg-green-500/20 text-green-500 px-2 py-0.5 rounded-sm text-xs">
                         Wallet
                       </span>
                     )}
@@ -331,7 +331,7 @@ const TokenHolders = ({ token, chainId }) => {
           <button
             onClick={loadMore}
             disabled={loading}
-            className="px-4 py-2 bg-dex-bg-secondary hover:bg-dex-blue/20 text-dex-text-primary rounded"
+            className="px-4 py-2 bg-dex-bg-secondary hover:bg-dex-blue/20 text-dex-text-primary rounded-sm"
           >
             {loading ? "Loading..." : "Load More"}
           </button>

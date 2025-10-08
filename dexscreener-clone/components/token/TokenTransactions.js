@@ -446,7 +446,7 @@ const TokenTransactions = ({ pair, chainId }) => {
                       rel="noopener noreferrer"
                       className="font-mono hover:text-dex-blue flex items-center"
                     >
-                      <span className="bg-dex-bg-tertiary text-dex-text-primary px-1 rounded mr-1">
+                      <span className="bg-dex-bg-tertiary text-dex-text-primary px-1 rounded-sm mr-1">
                         🦊
                       </span>
                       {formatWalletAddress(tx.walletAddress)}

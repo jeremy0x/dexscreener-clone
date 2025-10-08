@@ -131,7 +131,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                 ref={inputRef}
                 type="text"
                 placeholder="Search for tokens (e.g. ETH, BTC, PEPE)"
-                className="bg-transparent w-full focus:outline-none text-dex-text-primary"
+                className="bg-transparent w-full focus:outline-hidden text-dex-text-primary"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />

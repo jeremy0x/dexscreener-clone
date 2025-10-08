@@ -18,7 +18,7 @@ const FilterTools = ({
       <div className="flex items-center text-dex-text-secondary">
         <span className="mr-2">Sort by:</span>
         <select
-          className="bg-dex-bg-tertiary rounded px-2 py-1 text-dex-text-primary"
+          className="bg-dex-bg-tertiary rounded-sm px-2 py-1 text-dex-text-primary"
           value={sortBy}
           onChange={handleSortChange}
         >
@@ -33,7 +33,7 @@ const FilterTools = ({
       </div>
 
       <button
-        className="bg-dex-bg-tertiary hover:bg-dex-bg-highlight text-dex-text-primary rounded px-3 py-1"
+        className="bg-dex-bg-tertiary hover:bg-dex-bg-highlight text-dex-text-primary rounded-sm px-3 py-1"
         onClick={openFiltersModal}
       >
         <span className="flex items-center">

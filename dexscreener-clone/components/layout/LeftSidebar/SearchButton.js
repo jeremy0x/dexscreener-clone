@@ -4,7 +4,7 @@ const SearchButton = ({ openSearchModal }) => {
   return (
     <div className="mt-4 mb-3">
       <div
-        className="flex items-center bg-dex-bg-tertiary rounded p-2 cursor-pointer hover:bg-dex-bg-highlight transition-colors"
+        className="flex items-center bg-dex-bg-tertiary rounded-sm p-2 cursor-pointer hover:bg-dex-bg-highlight transition-colors"
         onClick={openSearchModal}
       >
         <svg

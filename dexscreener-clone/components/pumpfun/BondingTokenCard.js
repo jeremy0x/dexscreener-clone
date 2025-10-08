@@ -71,7 +71,7 @@ const BondingTokenCard = ({ token, formatPrice, formatNumber, onClick }) => {
         {/* Bonding progress bar */}
         <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
           <div
-            className={`h-full rounded-full bg-gradient-to-r ${progressColor()}`}
+            className={`h-full rounded-full bg-linear-to-r ${progressColor()}`}
             style={{ width: `${token.bondingCurveProgress || 0}%` }}
           ></div>
         </div>

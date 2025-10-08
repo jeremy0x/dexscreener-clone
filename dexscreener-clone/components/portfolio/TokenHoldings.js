@@ -52,13 +52,13 @@ const TokenHoldings = ({
   if (loading && tokens.length === 0) {
     return (
       <div className="bg-dex-bg-secondary rounded-lg p-4 animate-pulse">
-        <div className="h-6 bg-dex-bg-tertiary rounded w-1/4 mb-4"></div>
+        <div className="h-6 bg-dex-bg-tertiary rounded-sm w-1/4 mb-4"></div>
         {[...Array(5)].map((_, i) => (
           <div key={i} className="flex items-center mb-4">
             <div className="w-10 h-10 bg-dex-bg-tertiary rounded-full mr-3"></div>
             <div className="flex-1">
-              <div className="h-4 bg-dex-bg-tertiary rounded w-1/4 mb-2"></div>
-              <div className="h-3 bg-dex-bg-tertiary rounded w-1/3"></div>
+              <div className="h-4 bg-dex-bg-tertiary rounded-sm w-1/4 mb-2"></div>
+              <div className="h-3 bg-dex-bg-tertiary rounded-sm w-1/3"></div>
             </div>
           </div>
         ))}

@@ -2,8 +2,6 @@
 
 A comprehensive cryptocurrency terminal application built with Next.js 15 and React 19, featuring real-time token data, price charts, transaction history, and portfolio tracking. This project demonstrates how to build a modern crypto dashboard similar to Dexscreener using Moralis APIs.
 
-> **🚀 Recently Migrated to Next.js 15 & React 19!** This project has been fully migrated from Create React App to Next.js 15 with App Router, featuring the latest React 19 for improved performance and modern development experience.
-
 ## Video Tutorial
 
 📺 [Watch the step-by-step tutorial on YouTube](https://youtu.be/ps4vYIGpfhE)

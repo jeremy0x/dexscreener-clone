@@ -99,7 +99,7 @@ const SearchResults = ({ results, onClose }) => {
           onClick={() => handleTokenClick(token)}
         >
           <div className="flex items-center flex-1">
-            <div className="flex-shrink-0 relative mr-3">
+            <div className="shrink-0 relative mr-3">
               <img
                 src={token.logo || "/images/default-token.png"}
                 alt={token.symbol}

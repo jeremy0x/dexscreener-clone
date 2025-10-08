@@ -296,7 +296,7 @@ const FiltersModal = ({ isOpen, onClose, onApplyFilters }) => {
               Chain
             </label>
             <select
-              className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded text-dex-text-primary"
+              className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded-sm text-dex-text-primary"
               value={chain}
               onChange={(e) => setChain(e.target.value)}
             >
@@ -315,7 +315,7 @@ const FiltersModal = ({ isOpen, onClose, onApplyFilters }) => {
                 Filter Conditions
               </label>
               <button
-                className="px-2 py-1 bg-dex-blue text-white rounded text-sm"
+                className="px-2 py-1 bg-dex-blue text-white rounded-sm text-sm"
                 onClick={addFilter}
               >
                 + Add Condition
@@ -364,7 +364,7 @@ const FiltersModal = ({ isOpen, onClose, onApplyFilters }) => {
               Number of Results
             </label>
             <select
-              className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded text-dex-text-primary"
+              className="w-full px-3 py-2 bg-dex-bg-tertiary border border-dex-border rounded-sm text-dex-text-primary"
               value={limit}
               onChange={(e) => setLimit(Number(e.target.value))}
             >
@@ -378,13 +378,13 @@ const FiltersModal = ({ isOpen, onClose, onApplyFilters }) => {
 
         <div className="px-6 py-4 border-t border-dex-border flex justify-end space-x-3">
           <button
-            className="px-4 py-2 bg-dex-bg-tertiary text-dex-text-primary rounded hover:bg-dex-bg-highlight"
+            className="px-4 py-2 bg-dex-bg-tertiary text-dex-text-primary rounded-sm hover:bg-dex-bg-highlight"
             onClick={onClose}
           >
             Cancel
           </button>
           <button
-            className="px-4 py-2 bg-dex-blue text-white rounded hover:bg-blue-600"
+            className="px-4 py-2 bg-dex-blue text-white rounded-sm hover:bg-blue-600"
             onClick={applyFilters}
           >
             Apply Filters

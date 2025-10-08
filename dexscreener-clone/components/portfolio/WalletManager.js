@@ -78,7 +78,7 @@ const WalletManager = ({
                   </div>
                 </div>
                 <button
-                  className="text-dex-text-tertiary hover:text-dex-red p-1 rounded"
+                  className="text-dex-text-tertiary hover:text-dex-red p-1 rounded-sm"
                   onClick={(e) => {
                     e.stopPropagation();
                     onRemoveWallet(wallet.address);
@@ -118,7 +118,7 @@ const WalletManager = ({
             value={newWalletName}
             onChange={(e) => setNewWalletName(e.target.value)}
             placeholder="Main Wallet"
-            className="w-full bg-dex-bg-tertiary border border-dex-border rounded p-2 text-dex-text-primary"
+            className="w-full bg-dex-bg-tertiary border border-dex-border rounded-sm p-2 text-dex-text-primary"
           />
         </div>
 
@@ -131,13 +131,13 @@ const WalletManager = ({
             value={newWalletAddress}
             onChange={(e) => setNewWalletAddress(e.target.value)}
             placeholder="0x..."
-            className="w-full bg-dex-bg-tertiary border border-dex-border rounded p-2 text-dex-text-primary"
+            className="w-full bg-dex-bg-tertiary border border-dex-border rounded-sm p-2 text-dex-text-primary"
           />
         </div>
 
         <button
           onClick={handleAddWallet}
-          className="w-full bg-dex-blue hover:bg-blue-600 text-white rounded py-2"
+          className="w-full bg-dex-blue hover:bg-blue-600 text-white rounded-sm py-2"
         >
           Add Wallet
         </button>
